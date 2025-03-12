@@ -30,7 +30,17 @@ class Demo02Test {
                 Arguments.of(2, -3, -1),
                 Arguments.of(-2, -3, 5),
                 Arguments.of(Integer.MAX_VALUE, 1, -2147483648),
-                Arguments.of(Integer.MIN_VALUE, -1, -2147483647)
+                Arguments.of(Integer.MAX_VALUE, -1, 2147483646),
+                Arguments.of(Integer.MIN_VALUE, 1, 2147483647),
+                Arguments.of(Integer.MIN_VALUE, -1, -2147483647),
+                Arguments.of(1, Integer.MAX_VALUE, -2147483648),
+                Arguments.of(-1, Integer.MAX_VALUE, -2147483646),
+                Arguments.of(1, Integer.MIN_VALUE, 2147483647),
+                Arguments.of(-1, Integer.MIN_VALUE, -2147483647),
+                Arguments.of(Integer.MAX_VALUE, Integer.MAX_VALUE, -2),
+                Arguments.of(Integer.MIN_VALUE, Integer.MIN_VALUE, 0),
+                Arguments.of(Integer.MAX_VALUE, Integer.MIN_VALUE, -1),
+                Arguments.of(Integer.MIN_VALUE, Integer.MAX_VALUE, 1)
         );
     }
 }
