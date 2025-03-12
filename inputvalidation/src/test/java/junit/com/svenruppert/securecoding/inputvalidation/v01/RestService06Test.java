@@ -1,6 +1,6 @@
 package junit.com.svenruppert.securecoding.inputvalidation.v01;
 
-import com.svenruppert.securecoding.inputvalidation.v01.RestService;
+import com.svenruppert.securecoding.inputvalidation.v01.RestService06;
 import io.javalin.Javalin;
 import io.javalin.testtools.JavalinTest;
 import okhttp3.Response;
@@ -16,7 +16,7 @@ class RestService06Test {
 
   @Test
   void test001() {
-    RestService service = new RestService();
+    RestService06 service = new RestService06();
     Javalin     javalin = service.getService();
     JavalinTest.test(javalin, (server, httpClient) -> {
       Response response = httpClient.get("/");
@@ -29,7 +29,7 @@ class RestService06Test {
 
   @Test
   void test002() {
-    RestService service = new RestService();
+    RestService06 service = new RestService06();
     Javalin     javalin = service.getService();
     JavalinTest.test(javalin, (server, httpClient) -> {
       Response response = httpClient.get("/upper/value/name");
@@ -41,7 +41,7 @@ class RestService06Test {
   }
   @Test
   void test003() {
-    RestService service = new RestService();
+    RestService06 service = new RestService06();
     Javalin     javalin = service.getService();
     JavalinTest.test(javalin, (server, httpClient) -> {
       Response response = httpClient.get("/upper/3.0/xX@");
@@ -54,7 +54,7 @@ class RestService06Test {
 
   @Test
   void test004() {
-    RestService service = new RestService();
+    RestService06 service = new RestService06();
     Javalin     javalin = service.getService();
     JavalinTest.test(javalin, (server, httpClient) -> {
       Response response = httpClient.get("/divide//1");
@@ -67,7 +67,7 @@ class RestService06Test {
 
   @Test
   void test005() {
-    RestService service = new RestService();
+    RestService06 service = new RestService06();
     Javalin     javalin = service.getService();
     JavalinTest.test(javalin, (server, httpClient) -> {
       Response response = httpClient.get("/divide/ /1");
@@ -80,7 +80,7 @@ class RestService06Test {
 
   @Test
   void test006() {
-    RestService service = new RestService();
+    RestService06 service = new RestService06();
     Javalin     javalin = service.getService();
     JavalinTest.test(javalin, (server, httpClient) -> {
       Response response = httpClient.get("/divide/2/0");
@@ -93,7 +93,7 @@ class RestService06Test {
 
   @Test
   void test007() {
-    RestService service = new RestService();
+    RestService06 service = new RestService06();
     Javalin javalin = service.getService();
     JavalinTest.test(javalin, (server, httpClient) -> {
       Response response = httpClient.get("/divide/a/0");
@@ -106,7 +106,7 @@ class RestService06Test {
 
   @Test
   void test008() {
-    RestService service = new RestService();
+    RestService06 service = new RestService06();
     Javalin     javalin = service.getService();
     JavalinTest.test(javalin, (server, httpClient) -> {
       Response response = httpClient.get("/divide/2/2");
