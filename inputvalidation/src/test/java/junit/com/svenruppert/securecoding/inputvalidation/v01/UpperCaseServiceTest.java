@@ -14,4 +14,11 @@ class UpperCaseServiceTest {
     assertEquals("HELLO", hello);
   }
 
+  @Test
+  void test002() {
+    String hello = new UpperCaseService()
+        .toUpperCase("333");
+    assertEquals("333", hello);
+  }
+
 }
