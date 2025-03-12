@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 
 import com.svenruppert.securecoding.mutationtesting.Demo;
 
-class DemoTest03 {
+class Demo03Test {
 
   @Test
   void test001() {
