@@ -20,17 +20,17 @@ class Demo02Test {
 
     private static Stream<Arguments> provideTestData() {
         return Stream.of(
-                org.junit.jupiter.params.provider.Arguments.of(0, 0, 0),
-                org.junit.jupiter.params.provider.Arguments.of(1, 1, -2),
-                org.junit.jupiter.params.provider.Arguments.of(1, 3, -4),
-                org.junit.jupiter.params.provider.Arguments.of(2, 3, 5),
-                org.junit.jupiter.params.provider.Arguments.of(3, 3, 6),
-                org.junit.jupiter.params.provider.Arguments.of(-1, -1, 2),
-                org.junit.jupiter.params.provider.Arguments.of(-1, 3, -2),
-                org.junit.jupiter.params.provider.Arguments.of(2, -3, -1),
-                org.junit.jupiter.params.provider.Arguments.of(-2, -3, 5),
-                org.junit.jupiter.params.provider.Arguments.of(Integer.MAX_VALUE, 1, -2147483648),
-                org.junit.jupiter.params.provider.Arguments.of(Integer.MIN_VALUE, -1, -2147483647)
+                Arguments.of(0, 0, 0),
+                Arguments.of(1, 1, -2),
+                Arguments.of(1, 3, -4),
+                Arguments.of(2, 3, 5),
+                Arguments.of(3, 3, 6),
+                Arguments.of(-1, -1, 2),
+                Arguments.of(-1, 3, -2),
+                Arguments.of(2, -3, -1),
+                Arguments.of(-2, -3, 5),
+                Arguments.of(Integer.MAX_VALUE, 1, -2147483648),
+                Arguments.of(Integer.MIN_VALUE, -1, -2147483647)
         );
     }
 }
