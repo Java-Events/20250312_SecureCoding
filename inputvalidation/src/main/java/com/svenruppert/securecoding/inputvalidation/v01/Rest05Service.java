@@ -44,8 +44,15 @@ implements HasLogger {
           String valueA = ctx.pathParam("valueA");
           String valueB = ctx.pathParam("valueB");
 
+
+          //werte können null sein, bzw fehlen
+          if (valueA.isBlank()) {
+            ctx.status(400).result("Nicht alle Werte befüllt!");
+            return;
+          }
+
           //werte keine Zahlen
-          if (!valueA.matches("\\d") || !valueB.matches("\\d")) {
+          if (!valueA.matches("\\d+") || !valueB.matches("\\d+")) {
             ctx.status(400).result("Einer der beiden Werte ist keine Zahl!");
             return;
           }
@@ -60,7 +67,7 @@ implements HasLogger {
             ctx.result("Div durch 0 NICHT erlaubt!");
             return;
           }
-          ctx.status(200).json(result);
+          ctx.result(String.valueOf(result.get()));
         })
         .get("/upper/{value}/{name}", ctx -> {
           String value = ctx.pathParam("value");

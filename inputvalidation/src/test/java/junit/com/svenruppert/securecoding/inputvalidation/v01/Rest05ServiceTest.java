@@ -56,7 +56,7 @@ class Rest05ServiceTest {
 
   @Test
   void test004() {
-    Rest05Service service = new Rest05Service();
+    Rest05Service service = new Rest05Service(8080);
     Javalin     javalin = service.getService();
     JavalinTest.test(javalin, (server, httpClient) -> {
       Response response = httpClient.get("/divide/Omma/1");
@@ -90,6 +90,58 @@ class Rest05ServiceTest {
       ResponseBody body = response.body();
       assertNotNull(body);
       assertEquals("Div durch 0 NICHT erlaubt!", body.string());
+    });
+  }
+
+  @Test
+  void test007() {
+    Rest05Service service = new Rest05Service();
+    Javalin     javalin = service.getService();
+    JavalinTest.test(javalin, (server, httpClient) -> {
+      Response response = httpClient.get("/divide/13/20");
+      assertEquals(HttpStatus.OK.getCode(), response.code());
+      ResponseBody body = response.body();
+      assertNotNull(body);
+      assertEquals("0.65", body.string());
+    });
+  }
+
+  @Test
+  void test008() {
+    Rest05Service service = new Rest05Service();
+    Javalin     javalin = service.getService();
+    JavalinTest.test(javalin, (server, httpClient) -> {
+      Response response = httpClient.get("/divide//20");
+      assertEquals(HttpStatus.NOT_FOUND.getCode(), response.code());
+      ResponseBody body = response.body();
+      assertNotNull(body);
+      assertEquals("Not Found", body.string());
+    });
+  }
+
+  @Test
+  void test009() {
+    Rest05Service service = new Rest05Service();
+    Javalin     javalin = service.getService();
+    JavalinTest.test(javalin, (server, httpClient) -> {
+      Response response = httpClient.get("/divide/ /20");
+      assertEquals(HttpStatus.BAD_REQUEST.getCode(), response.code());
+      ResponseBody body = response.body();
+      assertNotNull(body);
+      assertEquals("Nicht alle Werte befüllt!", body.string());
+    });
+  }
+
+  @Test
+  void test010() {
+    Rest05Service service = new Rest05Service();
+    Javalin     javalin = service.getService();
+    JavalinTest.test(javalin, (server, httpClient) -> {
+      Response response = httpClient.get("/divide/13/ ");
+      assertEquals(HttpStatus.NOT_FOUND.getCode(), response.code());
+      ResponseBody body = response.body();
+      assertNotNull(body);
+      assertEquals("Not Found", body.string());
     });
   }
 }
