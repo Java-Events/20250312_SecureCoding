@@ -41,20 +41,20 @@ implements HasLogger {
         .get("/divide/{valueA}/{valueB}", ctx -> {
           String valueA = ctx.pathParam("valueA");
           String valueB = ctx.pathParam("valueB");
-  
+
           //werte können null sein, bzw fehlen
-          if(valueA.isEmpty()) {
+          if (valueA.isEmpty()) {
             ctx.result("Dividend hat keinen Wert");
             return;
           }
-          if(valueB.isEmpty()) {
+          if (valueB.isEmpty()) {
             ctx.result("Divisor hat keinen Wert");
             return;
           }
           //werte keine Zahlen
           try {
              Float.parseFloat(valueA);
-             Float.parseFloat(valueB); 
+             Float.parseFloat(valueB);
           } catch (NumberFormatException ex) {
             ctx.result("einer der Parameter ist keine Zahl");
             return;
@@ -65,10 +65,10 @@ implements HasLogger {
           Float fB = Float.valueOf(valueB);
           DivideService divService = new DivideService();
           String result;
-          try{
+          try {
             float floatResult = divService.divide(fA, fB);
             result = String.valueOf(floatResult);
-          }catch(IllegalArgumentException ex){
+          } catch (IllegalArgumentException ex) {
             result = "Div durch 0 geht nicht";
           }
           ctx.result(result);

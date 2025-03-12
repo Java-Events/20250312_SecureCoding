@@ -1,6 +1,7 @@
 package com.svenruppert.securecoding.inputvalidation.v01;
 
 import com.svenruppert.dependencies.core.logger.HasLogger;
+
 import io.javalin.Javalin;
 
 public class RestService06
@@ -42,7 +43,7 @@ implements HasLogger {
           String valueA = ctx.pathParam("valueA");
           String valueB = ctx.pathParam("valueB");
           //werte können null sein, bzw fehlen
-          if(valueA == null || valueA.isEmpty() || valueB == null || valueB.isEmpty()
+          if (valueA == null || valueA.isEmpty() || valueB == null || valueB.isEmpty()
                   || !valueA.matches(NUMERIC_REGEX) || !valueB.matches(NUMERIC_REGEX)) {
               ctx.result("");
           } else {
