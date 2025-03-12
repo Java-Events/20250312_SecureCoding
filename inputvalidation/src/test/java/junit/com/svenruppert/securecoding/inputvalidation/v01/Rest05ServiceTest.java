@@ -6,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 import org.junit.jupiter.api.Test;
 
-import com.svenruppert.securecoding.inputvalidation.v01.RestService;
+import com.svenruppert.securecoding.inputvalidation.v01.Rest05Service;
 
 import io.javalin.Javalin;
 import io.javalin.http.HttpStatus;
@@ -18,7 +18,7 @@ class Rest05ServiceTest {
 
   @Test
   void test001() {
-    RestService service = new RestService();
+    Rest05Service service = new Rest05Service();
     Javalin     javalin = service.getService();
     JavalinTest.test(javalin, (server, httpClient) -> {
       Response response = httpClient.get("/");
@@ -31,7 +31,7 @@ class Rest05ServiceTest {
 
   @Test
   void test002() {
-    RestService service = new RestService();
+    Rest05Service service = new Rest05Service();
     Javalin     javalin = service.getService();
     JavalinTest.test(javalin, (server, httpClient) -> {
       Response response = httpClient.get("/upper/value/name");
@@ -43,7 +43,7 @@ class Rest05ServiceTest {
   }
   @Test
   void test003() {
-    RestService service = new RestService();
+    Rest05Service service = new Rest05Service();
     Javalin     javalin = service.getService();
     JavalinTest.test(javalin, (server, httpClient) -> {
       Response response = httpClient.get("/upper/3.0/xX@");
@@ -56,7 +56,7 @@ class Rest05ServiceTest {
 
   @Test
   void test004() {
-    RestService service = new RestService();
+    Rest05Service service = new Rest05Service();
     Javalin     javalin = service.getService();
     JavalinTest.test(javalin, (server, httpClient) -> {
       Response response = httpClient.get("/divide/Omma/1");
@@ -69,7 +69,7 @@ class Rest05ServiceTest {
 
   @Test
   void test005() {
-    RestService service = new RestService();
+    Rest05Service service = new Rest05Service();
     Javalin     javalin = service.getService();
     JavalinTest.test(javalin, (server, httpClient) -> {
       Response response = httpClient.get("/divide/2/Oppa");
@@ -82,7 +82,7 @@ class Rest05ServiceTest {
 
   @Test
   void test006() {
-    RestService service = new RestService();
+    Rest05Service service = new Rest05Service();
     Javalin     javalin = service.getService();
     JavalinTest.test(javalin, (server, httpClient) -> {
       Response response = httpClient.get("/divide/2/0");
