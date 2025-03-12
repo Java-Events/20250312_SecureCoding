@@ -3,11 +3,14 @@ package com.svenruppert.securecoding.inputvalidation.v01;
 import com.svenruppert.dependencies.core.logger.HasLogger;
 import io.javalin.Javalin;
 
+import java.util.Optional;
+
 public class RestService
 implements HasLogger {
 
   public static final int DEFAULT_PORT = 7070;
-  private final Javalin service;
+    public static final String NUMERIC_REGEX = "-?\\d+(\\.\\d+)?";
+    private final Javalin service;
   private final int port;
 
 
@@ -41,24 +44,18 @@ implements HasLogger {
           String valueA = ctx.pathParam("valueA");
           String valueB = ctx.pathParam("valueB");
           //werte können null sein, bzw fehlen
-          if(valueA == null || valueA.isEmpty()) {
-
+          if(valueA == null || valueA.isEmpty() || valueB == null || valueB.isEmpty()
+                  || !valueA.matches(NUMERIC_REGEX) || !valueB.matches(NUMERIC_REGEX)) {
+              ctx.result("");
+          } else {
+              Float fB = Float.valueOf(valueB);
+              if (Math.signum(fB) == 0) {
+                  ctx.result("");
+              } else {
+                  Float fA = Float.valueOf(valueA);
+                  ctx.result(String.valueOf(new DivideService().divide(fA, fB)));
+              }
           }
-          if(valueB == null || valueB.isEmpty()) {
-
-          }
-          //werte keine Zahlen
-
-          //Division durch 0
-          Float fA = Float.valueOf(valueA);
-          Float fB = Float.valueOf(valueB);
-          DivideService service = new DivideService();
-          try{
-            float result = service.divide(fA, fB);
-          }catch(){
-
-          }
-
         })
         .get("/upper/{value}/{name}", ctx -> {
           String value = ctx.pathParam("value");

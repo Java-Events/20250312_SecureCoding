@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.Optional;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 public class DivideServiceTest {
@@ -30,5 +31,12 @@ public class DivideServiceTest {
     var service = new DivideService();
     Optional<Float> v = service.divideNull(0, 0);
     assertTrue(v.isEmpty());
+  }
+
+  @Test
+  void test004() {
+    var service = new DivideService();
+    Optional<Float> v = service.divideNull(4, 2);
+    assertEquals(Optional.of(2f), v);
   }
 }
