@@ -38,4 +38,42 @@ class RestServiceTest {
       assertEquals("VALUE-NAME", body.string());
     });
   }
+  @Test
+  void test003() {
+    RestService service = new RestService();
+    Javalin     javalin = service.getService();
+    JavalinTest.test(javalin, (server, httpClient) -> {
+      Response response = httpClient.get("/upper/3.0/xX@");
+      assertEquals(OK.getCode(), response.code());
+      ResponseBody body = response.body();
+      assertNotNull(body);
+      assertEquals("3.0-XX@", body.string());
+    });
+  }
+
+  @Test
+  void test004() {
+    RestService service = new RestService();
+    Javalin     javalin = service.getService();
+    JavalinTest.test(javalin, (server, httpClient) -> {
+      Response response = httpClient.get("/divide//1");
+      assertEquals(OK.getCode(), response.code());
+      ResponseBody body = response.body();
+      assertNotNull(body);
+      assertEquals("3.0-XX@", body.string());
+    });
+  }
+
+  @Test
+  void test005() {
+    RestService service = new RestService();
+    Javalin     javalin = service.getService();
+    JavalinTest.test(javalin, (server, httpClient) -> {
+      Response response = httpClient.get("/divide/2/0");
+      assertEquals(OK.getCode(), response.code());
+      ResponseBody body = response.body();
+      assertNotNull(body);
+      assertEquals("3.0-XX@", body.string());
+    });
+  }
 }
