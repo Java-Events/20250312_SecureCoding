@@ -51,18 +51,19 @@ implements HasLogger {
             ctx.result("Divisor hat keinen Wert");
             return;
           }
+          
+          Float fA;
+          Float fB;
           //werte keine Zahlen
           try {
-             Float.parseFloat(valueA);
-             Float.parseFloat(valueB);
+            fA = Float.valueOf(valueA);
+            fB = Float.valueOf(valueB);
           } catch (NumberFormatException ex) {
             ctx.result("einer der Parameter ist keine Zahl");
             return;
           }
 
           //Division durch 0
-          Float fA = Float.valueOf(valueA);
-          Float fB = Float.valueOf(valueB);
           DivideService divService = new DivideService();
           String result;
           try {
