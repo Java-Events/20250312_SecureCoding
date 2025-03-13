@@ -8,9 +8,6 @@ import com.svenruppert.securecoding.inputvalidation.v03.p01.ApplicationResult;
 import com.svenruppert.securecoding.inputvalidation.v03.p01.services.FileUploadService;
 
 import java.io.*;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 
 public class FileUploadHandler implements HttpHandler, HasLogger {
 

@@ -32,8 +32,7 @@ class RestServiceTest {
 
     @Test
     void testFileUpload() throws IOException {
-        File file = File.createTempFile("testfile", ".txt");
-        Files.writeString(file.toPath(), "This is a test file");
+        File file = createATestFile();
 
         URI uri = URI.create(BASE_URL + "/upload");
         HttpURLConnection connection = (HttpURLConnection) uri.toURL().openConnection();
@@ -58,6 +57,12 @@ class RestServiceTest {
         }
 
         assertTrue(response.toString().contains("Datei gespeichert"));
+    }
+
+    private static File createATestFile() throws IOException {
+        File file = File.createTempFile("testfile", ".txt");
+        Files.writeString(file.toPath(), "This is a test file");
+        return file;
     }
 
     @Test

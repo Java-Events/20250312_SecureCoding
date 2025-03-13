@@ -1,7 +1,6 @@
 package com.svenruppert.securecoding.inputvalidation.v03.p01.services;
 
 import com.svenruppert.dependencies.core.logger.HasLogger;
-import com.svenruppert.securecoding.inputvalidation.v03.p01.ApplicationException;
 import com.svenruppert.securecoding.inputvalidation.v03.p01.ApplicationResult;
 
 import java.io.*;
