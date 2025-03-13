@@ -7,6 +7,7 @@ public class Application {
 	public static void main(String[] args) {
 
 		System.out.println("Starte Server auf port "+ DEFAULT_PORT);
-		new RestService().startService(DEFAULT_PORT);
+		RestService service = new RestService();
+		service.startService(DEFAULT_PORT);
 	}
 }
