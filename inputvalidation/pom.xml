@@ -11,9 +11,10 @@
 
     <artifactId>inputvalidation</artifactId>
 
-    <properties>
-
-    </properties>
+        <properties>
+            <pitest-prod-classes>com.svenruppert.*</pitest-prod-classes>
+            <pitest-test-classes>junit.*</pitest-test-classes>
+        </properties>
 
 
     <dependencies>
