@@ -1,6 +1,6 @@
-package com.svenruppert.securecoding.p02;
+package com.svenruppert.securecoding.jca;
 
-public class LoginDemo {
+public class LoginDemo02 {
 
     public static class Client {
 
