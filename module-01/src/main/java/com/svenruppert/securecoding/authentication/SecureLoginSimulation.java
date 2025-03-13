@@ -25,7 +25,9 @@ public class SecureLoginSimulation
   }
 
   private static byte[] toByte(char[] input){
-    ByteBuffer byteBuffer = StandardCharsets.UTF_8.encode(CharBuffer.wrap(input));
+    ByteBuffer byteBuffer = StandardCharsets
+        .UTF_8
+        .encode(CharBuffer.wrap(input));
     byte[] output = new byte[byteBuffer.remaining()];
     byteBuffer.get(output);
     return output;
