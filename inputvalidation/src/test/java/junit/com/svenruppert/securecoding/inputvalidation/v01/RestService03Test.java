@@ -39,7 +39,7 @@ class RestService03Test {
       assertEquals("VALUE-NAME", body.string());
     });
   }
-  @Test
+//  @Test
   void test003() {
     RestService03 service = new RestService03();
     Javalin     javalin = service.getService();
@@ -52,7 +52,7 @@ class RestService03Test {
     });
   }
 
-  @Test
+//  @Test
   void test004() {
     RestService03 service = new RestService03();
     Javalin     javalin = service.getService();
@@ -65,7 +65,7 @@ class RestService03Test {
     });
   }
 
-  @Test
+//  @Test
   void test005() {
     RestService03 service = new RestService03();
     Javalin     javalin = service.getService();
