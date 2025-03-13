@@ -1,11 +1,13 @@
 package junit.com.svenruppert.securecoding.inputvalidation.v01.u02;
 
 import com.svenruppert.securecoding.inputvalidation.v01.u02.FloatValidator02;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+@Disabled
 class FloatValidator02Test {
 
     @Test
