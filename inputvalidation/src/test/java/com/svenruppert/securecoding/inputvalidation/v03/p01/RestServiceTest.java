@@ -1,4 +1,4 @@
-package junit.com.svenruppert.securecoding.inputvalidation.v03.p01;
+package com.svenruppert.securecoding.inputvalidation.v03.p01;
 
 import com.svenruppert.securecoding.inputvalidation.v01.RestService01;
 import io.javalin.Javalin;

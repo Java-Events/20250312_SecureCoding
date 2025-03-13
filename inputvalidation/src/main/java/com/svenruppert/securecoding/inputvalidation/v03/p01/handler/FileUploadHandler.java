@@ -1,11 +1,11 @@
-package junit.com.svenruppert.securecoding.inputvalidation.v03.p01.handler;
+package com.svenruppert.securecoding.inputvalidation.v03.p01.handler;
 
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
 import com.svenruppert.dependencies.core.logger.HasLogger;
-import junit.com.svenruppert.securecoding.inputvalidation.v03.p01.ApplicationException;
-import junit.com.svenruppert.securecoding.inputvalidation.v03.p01.ApplicationResult;
-import junit.com.svenruppert.securecoding.inputvalidation.v03.p01.services.FileUploadService;
+import com.svenruppert.securecoding.inputvalidation.v03.p01.ApplicationException;
+import com.svenruppert.securecoding.inputvalidation.v03.p01.ApplicationResult;
+import com.svenruppert.securecoding.inputvalidation.v03.p01.services.FileUploadService;
 
 import java.io.*;
 
