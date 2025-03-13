@@ -13,7 +13,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class FileUploadServiceTest {
 
     @Test
-    void testSaveFile() throws IOException {
+    void test_save_successful() throws IOException {
         FileUploadService fileUploadService = new FileUploadService();
 
         /* given */
@@ -30,16 +30,11 @@ class FileUploadServiceTest {
     }
 
     @Test
-    void testSaveFileIOException() {
+    void test_null_inputstream() {
         FileUploadService fileUploadService = new FileUploadService();
 
-        /* given */
-        ByteArrayInputStream inputStream = null;
-
-        /* then */
         assertThrows(IllegalArgumentException.class, () -> {
-            /* when */
-            fileUploadService.saveFile(inputStream);
+            fileUploadService.saveFile(null);
         });
     }
 }

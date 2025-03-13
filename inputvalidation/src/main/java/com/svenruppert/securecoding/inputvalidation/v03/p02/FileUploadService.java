@@ -17,6 +17,7 @@ public class FileUploadService {
 
     // TODO maybe add jspecify null annotations?
     public File saveFile(InputStream inputStream) throws IOException {
+        logger.info("Saving file");
         if (inputStream == null) {
             throw new IllegalArgumentException("inputStream cannot be null");
         }
