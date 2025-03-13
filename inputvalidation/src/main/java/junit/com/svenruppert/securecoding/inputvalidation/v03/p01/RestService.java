@@ -1,8 +1,8 @@
-package com.svenruppert.securecoding.inputvalidation.v03.p01;
+package junit.com.svenruppert.securecoding.inputvalidation.v03.p01;
 
 import com.sun.net.httpserver.HttpServer;
 import com.svenruppert.dependencies.core.logger.HasLogger;
-import com.svenruppert.securecoding.inputvalidation.v03.p01.handler.FileUploadHandler;
+import junit.com.svenruppert.securecoding.inputvalidation.v03.p01.handler.FileUploadHandler;
 
 import java.io.*;
 import java.net.InetSocketAddress;

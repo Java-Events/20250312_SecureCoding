@@ -1,8 +1,7 @@
-package com.svenruppert.securecoding.inputvalidation.v03.p01.services;
+package junit.com.svenruppert.securecoding.inputvalidation.v03.p01.services;
 
 import com.svenruppert.dependencies.core.logger.HasLogger;
-import com.svenruppert.securecoding.inputvalidation.v03.p01.ApplicationException;
-import com.svenruppert.securecoding.inputvalidation.v03.p01.ApplicationResult;
+import junit.com.svenruppert.securecoding.inputvalidation.v03.p01.ApplicationResult;
 
 import java.io.*;
 import java.nio.file.Files;

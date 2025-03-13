@@ -1,4 +1,4 @@
-package com.svenruppert.securecoding.inputvalidation.v03.p01;
+package junit.com.svenruppert.securecoding.inputvalidation.v03.p01;
 
 import java.nio.file.Path;
 import java.util.concurrent.Callable;

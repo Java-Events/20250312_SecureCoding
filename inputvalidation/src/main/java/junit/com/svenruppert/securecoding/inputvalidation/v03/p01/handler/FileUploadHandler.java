@@ -1,16 +1,13 @@
-package com.svenruppert.securecoding.inputvalidation.v03.p01.handler;
+package junit.com.svenruppert.securecoding.inputvalidation.v03.p01.handler;
 
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
 import com.svenruppert.dependencies.core.logger.HasLogger;
-import com.svenruppert.securecoding.inputvalidation.v03.p01.ApplicationException;
-import com.svenruppert.securecoding.inputvalidation.v03.p01.ApplicationResult;
-import com.svenruppert.securecoding.inputvalidation.v03.p01.services.FileUploadService;
+import junit.com.svenruppert.securecoding.inputvalidation.v03.p01.ApplicationException;
+import junit.com.svenruppert.securecoding.inputvalidation.v03.p01.ApplicationResult;
+import junit.com.svenruppert.securecoding.inputvalidation.v03.p01.services.FileUploadService;
 
 import java.io.*;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 
 public class FileUploadHandler implements HttpHandler, HasLogger {
 
