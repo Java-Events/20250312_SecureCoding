@@ -1,5 +1,6 @@
 package junit.com.svenruppert.securecoding.inputvalidation.v03.p05;
 
+import java.nio.file.Path;
 import java.nio.file.Paths;
 
 import org.junit.jupiter.api.Assertions;
@@ -20,7 +21,11 @@ class RestServiceTest {
 	    String targetURL = "http://localhost:8080/upload";
 		String resultPath = new FileUpload().uploadFile(filePath, targetURL);
 
-		Assertions.assertTrue(Paths.get(resultPath).toFile().exists());
+		final Path path = Paths.get(resultPath);
+		Assertions.assertTrue(path.toFile().exists());
+
+		path.toFile().delete();
+		service.stopService();
 	}
 
 }

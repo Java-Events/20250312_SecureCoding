@@ -8,10 +8,11 @@ import com.svenruppert.securecoding.inputvalidation.v03.p05.handler.FileUploadHa
 
 public class RestService {
 
+	private HttpServer server;
 
 	public void startService(final int port) {
 		try {
-			HttpServer server = HttpServer.create(new InetSocketAddress(port), 0);
+			server = HttpServer.create(new InetSocketAddress(port), 0);
 			server.createContext("/upload", new FileUploadHandler());
 			server.setExecutor(null);
 			server.start();
@@ -19,6 +20,12 @@ public class RestService {
 		} catch(IOException e) {
 			//TODO Logging
 			System.out.println(e.getMessage());
+		}
+	}
+
+	public void stopService() {
+		if (server != null) {
+			server.stop(0);
 		}
 	}
 
