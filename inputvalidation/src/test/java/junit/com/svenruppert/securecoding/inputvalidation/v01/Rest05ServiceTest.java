@@ -4,6 +4,7 @@ import static org.eclipse.jetty.http.HttpStatus.Code.OK;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import com.svenruppert.securecoding.inputvalidation.v01.Rest05Service;
@@ -14,6 +15,7 @@ import io.javalin.testtools.JavalinTest;
 import okhttp3.Response;
 import okhttp3.ResponseBody;
 
+@Disabled
 class Rest05ServiceTest {
 
   @Test

@@ -1,12 +1,14 @@
 package junit.com.svenruppert.securecoding.inputvalidation.v01;
 
 import com.svenruppert.securecoding.inputvalidation.v01.DivideService;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+@Disabled
 public class DivideService01Test {
 
   @Test

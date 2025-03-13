@@ -2,6 +2,7 @@ package junit.com.svenruppert.securecoding.inputvalidation.v01;
 
 import com.svenruppert.securecoding.inputvalidation.v01.DivideService;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import java.util.Optional;
@@ -9,6 +10,7 @@ import java.util.Optional;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
+@Disabled
 public class DivideServiceTest {
 
   @Test

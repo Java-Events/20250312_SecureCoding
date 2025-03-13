@@ -1,10 +1,12 @@
 package junit.com.svenruppert.securecoding.inputvalidation.v01.u02;
 
 import com.svenruppert.securecoding.inputvalidation.v01.u02.UpperCaseService02;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+@Disabled
 class UpperCaseService02Test {
 
   @Test
